@@ -1,0 +1,22 @@
+{
+  "name": "samplejs",
+  "main": "app/app.js",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "setup-nativescript-stackblitz && ns preview"
+  },
+  "dependencies": {
+    "@nativescript/core": "~8.8.0",
+    "@nativescript/camera": "^5.0.12",
+    "axios": "^1.6.7",
+    "@nativescript/stripe": "^3.0.3"
+  },
+  "devDependencies": {
+    "@nativescript/preview-cli": "^1.0.13",
+    "@nativescript/stackblitz": "^0.0.8",
+    "@nativescript/tailwind": "^2.1.0",
+    "@nativescript/webpack": "~5.0.0",
+    "tailwindcss": "~3.4.0"
+  }
+}

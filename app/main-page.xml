@@ -1,0 +1,33 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+    <ActionBar title="Dog Breed AI" class="header" flat="true" />
+    <ScrollView>
+        <StackLayout>
+            <!-- Image Area -->
+            <GridLayout rows="300" visibility="{{ !dogImage ? 'visible' : 'collapsed' }}" class="camera-placeholder">
+                <Label text="📸 Take a photo of your dog" class="text-center text-gray-500" verticalAlignment="center" />
+            </GridLayout>
+            
+            <Image src="{{ dogImage }}" height="300" stretch="aspectFill" 
+                   visibility="{{ dogImage ? 'visible' : 'collapsed' }}" />
+            
+            <!-- Status Message -->
+            <StackLayout class="p-4">
+                <Label text="{{ breedResult }}" class="text-lg text-center" textWrap="true" />
+                
+                <ActivityIndicator busy="{{ isLoading }}" class="m-4" />
+                
+                <!-- Camera Button -->
+                <Button text="{{ dogImage ? '📸 Retake Photo' : '📸 Take Photo' }}" 
+                        tap="{{ takePhoto }}" 
+                        class="{{ dogImage ? 'secondary-button' : 'primary-button' }}" />
+                
+                <!-- Payment UI -->
+                <StackLayout visibility="{{ showPaymentUI ? 'visible' : 'collapsed' }}" class="m-4">
+                    <Label text="Ready to identify your dog's breed!" class="text-lg text-center font-bold" />
+                    <Label text="$1.99" class="price-tag text-center m-2 text-lg" />
+                    <Button text="💳 Pay & Identify Breed" tap="{{ processPayment }}" class="primary-button" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>
